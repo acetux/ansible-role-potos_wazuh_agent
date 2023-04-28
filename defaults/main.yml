@@ -1,7 +1,4 @@
 ---
 
-# Example variable
-potos_template_example_var: 'hello world!'
-
-# List of items used for action xyz
-potos_template_example_list: []
+# IP addess of Wazuh Manager
+potos_wazuh_agent_manager_ip: 20.203.242.117
