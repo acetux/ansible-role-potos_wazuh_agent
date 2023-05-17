@@ -15,10 +15,18 @@
     update_cache: true
   become: true
 
-- name: Configure wazuh manager host
-  ansible.builtin.shell: 'WAZUH_MANAGER="{{ potos_wazuh_agent_manager_ip }}"'
-  changed_when: false
-  become: true
+- name: Create config dir
+  ansible.builtin.file:
+    path: /var/ossec/etc/
+    state: directory
+    mode: '0770'
+
+- name: Apply config template
+  ansible.builtin.template:
+    src: templates/var/ossec/etc/ossec.conf.j2
+    dest: /var/ossec/etc/ossec.conf
+    mode: '0660'
+  notify: Restart wazuh-agent
 
 - name: Install wazuh agent
   ansible.builtin.apt:

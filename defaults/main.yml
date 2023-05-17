@@ -1,4 +1,4 @@
 ---
 
-# IP addess of Wazuh Manager
-potos_wazuh_agent_manager_ip: 20.203.242.117
+# IP address (or hostname) of the Wazuh server
+#potos_wazuh_agent_manager_ip: 1.2.3.4 # set in vars in potos specs repo
